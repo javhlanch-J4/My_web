@@ -31,7 +31,7 @@ from.addEventListener("submit",
     e.preventDefault();
     tasks.push({
         id:Date.now(),
-        text:input.value.trime(),
+        text:input.value.trim (),
         done:false,
     });
     input.value="";
