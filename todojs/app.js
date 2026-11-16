@@ -14,7 +14,7 @@ function render(){
         const li=document.createElement("li");
         li.textContent=task.text;
         if(task.done)li.classList.add("done");
-        li.addEventListener("click",()=>{toggleTask(task.id));
+        li.addEventListener("click",()=>{toggleTask(task.id)});
 
             constdel=document.createElement("button");
             del.textContent="X";
@@ -38,3 +38,31 @@ from.addEventListener("submit",(e)=>{
     save();
     render();
 });
+ from.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    tasks.push({
+        id:Date.now(),
+        text:input.value.trim(),
+        done:false,
+    });
+    input.value="";
+    save();
+    render();
+});
+function toggleTask(id){
+     task=tasks.map((t)=>
+        t.id===id ? {...t, done: !t.done} : t
+    ); 
+    save();
+    render();
+}
+function deleteTask(id){
+    task=tasks.filter((t)=>t.id!==id);      
+    save();
+    render();
+}
+function save(){
+    localStorage.setItem("tasks",JSON.stringify(tasks));
+}
+tasks=JSON.parse(localStorage.getItem("tasks"))??[];
+render();
