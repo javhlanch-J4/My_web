@@ -11,7 +11,7 @@ function render(){
             del.addEventListener("click",(e)=>{
                 e.stopPropagation();
                 deleteTask(task.id);
-            }
+            
         });
         li.appendChild(del);
         list.appendChild(li);
