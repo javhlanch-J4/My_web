@@ -25,7 +25,7 @@ function render(){
             del.addEventListener("click",(e)=>{
                 e.stopPropagation();
                 deleteTask(task.id);
-    });s
+    });
         li.append(del);
         list.append(li);
     });
