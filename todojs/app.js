@@ -1,3 +1,13 @@
+let task=[
+    {
+        id:1,
+        text:"Лекц унших",
+        done:true},
+    {
+        id:2,
+        text:"Aпп бичих",
+        done:false}, 
+];
 function render(){
     list.innerHTML="";
     task.forEach((task)=>{
@@ -17,3 +27,14 @@ function render(){
         list.appendChild(li);
     });
 }
+from.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    tasks.push({
+        id:Date.now(),
+        text:input.value.trime(),
+        done:false,
+    });
+    input.value="";
+    save();
+    render();
+});
