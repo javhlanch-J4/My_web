@@ -1,4 +1,9 @@
-let task=[
+
+const form=document.querySelector("#todofrom");
+const input=document.querySelector("#input");
+const list=document.querySelector("#list");
+
+let tasks=[
     {
         id:1,
         text:"Лекц унших",
@@ -10,34 +15,23 @@ let task=[
 ];
 function render(){
     list.innerHTML="";
-    task.forEach((task)=>{
+    tasks.forEach((task)=>{
         const li=document.createElement("li");
         li.textContent=task.text;
         if(task.done) li.classList.add("done");
         li.addEventListener("click",()=>toggleTask(task.id));
             const del = document.createElement("button");
-            del.textContent="X";
+            del.textContent="устгах";
             del.addEventListener("click",(e)=>{
                 e.stopPropagation();
                 deleteTask(task.id);
-    });
+    });s
         li.append(del);
         list.append(li);
     });
 }
-from.addEventListener("submit",
+form.addEventListener("submit",
     (e)=>{
-    e.preventDefault();
-    tasks.push({
-        id:Date.now(),
-        text:input.value.trim (),
-        done:false,
-    });
-    input.value="";
-    save();
-    render();
-});
- from.addEventListener("submit",(e)=>{
     e.preventDefault();
     tasks.push({
         id:Date.now(),
@@ -50,14 +44,14 @@ from.addEventListener("submit",
 });
  
 function toggleTask(id){
-     task=tasks.map((t)=>
+     tasks=tasks.map((t)=>
         t.id===id ? {...t, done: !t.done} : t
     ); 
     save();
     render();
 }
 function deleteTask(id){
-    task=tasks.filter((t)=>t.id!==id);      
+    tasks=tasks.filter((t)=>t.id!==id);      
     save();
     render();
 }
