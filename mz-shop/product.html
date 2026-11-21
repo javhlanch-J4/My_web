@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jersey / Wild Mind / — MZ Shop</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<!-- body-д index.html-тэй ижил class өг -->
+<body>
+
+  <!-- HEADER: index.html дээр бичсэн header-ээ энд хуулж тавь.
+       Сагсны тооны span-д id="cart-count" нэм — JavaScript үүгээр олно. -->
+  <header>
+    <a href="index.html">MZ <span>SHOP</span></a>
+    <a href="#">
+      🛒 Сагс
+      <span id="cart-count">0</span>
+    </a>
+  </header>
+
+
+  <main>
+
+    <!-- Зам (breadcrumb) -->
+    <p>
+      <a href="index.html">Бүгд</a> / <span>Jersey</span>
+    </p>
+
+    <!-- АЛХАМ 6: ХОЁР БАГАНА — зураг | мэдээлэл (grid md:grid-cols-2) -->
+    <div>
+
+      <!-- АЛХАМ 6: ЗҮҮН ТАЛ — зургийн цомог -->
+      <!-- 5 баганын 1-д жижиг зургууд, 4-т том зураг (grid-cols-5, col-span-4) -->
+      <div>
+
+        <!-- Жижиг зургууд: class="thumb"-ыг бүү устга, JavaScript үүгээр олно -->
+        <div>
+          <img src="images/jersey-1.svg" alt="Урд тал" class="thumb">
+          <img src="images/jersey-2.svg" alt="Ар тал" class="thumb">
+          <img src="images/jersey-3.svg" alt="Хэмжээний хүснэгт" class="thumb">
+        </div>
+
+        <!-- Том зураг -->
+        <img id="main-image" src="images/jersey-1.svg" alt="Jersey Wild Mind">
+
+      </div>
+
+
+      <!-- АЛХАМ 7: БАРУУН ТАЛ — бүтээгдэхүүний мэдээлэл -->
+      <div>
+        <h1>Jersey / Wild Mind /</h1>
+        <p>150,000₮</p>
+
+        <p>
+          Энэхүү бүтээгдэхүүнийг ХУД, 19-р хороолол, Sumber Tower-ийн 1 давхарт
+          байрлах дэлгүүрээс бэлнээр худалдан авах боломжтой.
+        </p>
+
+        <!-- Хэмжээ сонгох: class="size-btn"-ыг бүү устга -->
+        <p>Хэмжээ:</p>
+        <div>
+          <button class="size-btn">S</button>
+          <button class="size-btn">M</button>
+          <button class="size-btn">L</button>
+          <button class="size-btn">XL</button>
+          <button class="size-btn">2XL</button>
+        </div>
+
+        <!-- Тоо ширхэг -->
+        <div>
+          <button id="minus">−</button>
+          <span id="qty">1</span>
+          <button id="plus">+</button>
+        </div>
+
+        <p>🚚 Хүргэлттэй</p>
+
+        <!-- Товчнууд -->
+        <div>
+          <button id="add-to-cart">🛒 Сагслах</button>
+          <button>Худалдан авах</button>
+        </div>
+
+        <!-- JavaScript энд мэдэгдэл бичнэ -->
+        <p id="message"></p>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+    <p>Сургалтын жишээ хуудас — mongolz.shop сайтаас санаа авав.</p>
+  </footer>
+
+</body>
+</html>
