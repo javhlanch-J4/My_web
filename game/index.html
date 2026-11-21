@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ухаалаг Асуулт Хариултын Тоглоом</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="quiz-container">
+    <!-- 1. ЭХЛЭХ ДЭЛГЭЦ -->
+    <div id="start-screen" class="screen active">
+      <h1>🧠 Мэдлэг Сорих Тэмцээн</h1>
+      <p>Танд 3 амь болон нэг удаагийн 50/50 тусламж бий. Асуулт бүр 15 секунд!</p>
+      <input type="text" id="player-name" placeholder="Нэрээ оруулна уу..." maxlength="15">
+      <button id="start-btn" class="btn primary-btn">Тоглоом эхлэх</button>
+
+      <div class="leaderboard-box">
+        <h3>🏆 Шилдэг 5 Тоглогч</h3>
+        <ul id="leaderboard-list"></ul>
+      </div>
+    </div>
+
+    <!-- 2. ТОГЛООМЫН ДЭЛГЭЦ -->
+    <div id="game-screen" class="screen">
+      <div class="top-bar">
+        <div id="lives">❤️❤️❤️</div>
+        <div id="timer" class="timer">⏱️ 15с</div>
+        <div id="score">Оноо: 0</div>
+      </div>
+
+      <div class="progress-bar">
+        <div id="progress-fill"></div>
+      </div>
+
+      <h2 id="question-text">Асуулт энд гарна...</h2>
+
+      <div id="options-container" class="options-grid">
+        <!-- Хариултын товчлуурууд JS-ээр үүснэ -->
+      </div>
+
+      <div class="bottom-bar">
+        <button id="fifty-btn" class="btn help-btn">💡 50/50 Тусламж</button>
+        <button id="next-btn" class="btn primary-btn" disabled>Дараагийнх ➔</button>
+      </div>
+    </div>
+
+    <!-- 3. ТӨГСГӨЛИЙН ДЭЛГЭЦ -->
+    <div id="end-screen" class="screen">
+      <h1 id="end-title">Баяр хүргэе!</h1>
+      <p id="final-score-text"></p>
+      <button id="restart-btn" class="btn primary-btn">Дахин тоглох</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
